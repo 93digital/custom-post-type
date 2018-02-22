@@ -1,9 +1,9 @@
 {
     "name": "93digital/custom-post-type",
     "description": "Custom Post type utility functions by 93digital",
-    "version": "1.0",
     "homepage": "https://github.com/93digital/custom-post-type",
     "license": "MIT",
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "93digital",
