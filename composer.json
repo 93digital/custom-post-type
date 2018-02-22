@@ -1,0 +1,11 @@
+{
+    "name": "93digital/custom-post-type",
+    "description": "Custom Post type utility functions by 93digital",
+    "require": {
+        "php": "^5.3.3 || ^7.0"
+    },
+    "autoload": {
+        "classmap": ["cpt.php"],
+        "exclude-from-classmap": ["phpcs.xml"]
+    }
+}
