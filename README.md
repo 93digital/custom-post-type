@@ -9,7 +9,7 @@ A PHP Class for creating WordPress Custom Post Types easily
 Run the following in your terminal to install PostTypes with [Composer](https://getcomposer.org/).
 
 ```
-$ composer require 93digital/custom-post-type
+$ composer require "93digital/custom-post-type @dev"
 ```
 
 Below is a basic example of getting started with the class, though your setup maybe different depending on how you are using composer.
