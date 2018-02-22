@@ -157,7 +157,10 @@ class PostType extends PostType\Post_Type {
 		// If is not public, by default set the SHOW_UI and show_in_nav_menus parameters are set to false,
 		// but by default we want/need to show it in the back-end.
 		if ( ! $is_public && ! isset( $options['show_ui'] ) ) {
-			$options['show_ui']           = true;
+			$options['show_ui'] = true;
+		}
+
+		if ( ! $is_public && ! isset( $options['show_in_nav_menus'] ) ) {
 			$options['show_in_nav_menus'] = true;
 		}
 
