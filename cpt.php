@@ -108,15 +108,15 @@ class PostType extends PostType\Post_Type {
 	 * @internal
 	 * @param string $singular The post type name to register.
 	 * @param array  $plural   The plural name for the CPT.
-	 * @param array  $icon     The menu icon, for the full list visit:
-	 *                         https://developer.wordpress.org/resource/dashicons/
-	 * @param array  $supports The 'supports' parameter for the CPT. 
-	 *                         By default the supports values is:
+	 * @param array  $icon     The menu icon, for the full list visit: https://developer.wordpress.org/resource/dashicons/.
+	 *                         Default 'dashicons-format-aside'.
+	 * @param array  $supports The 'supports' parameter for the CPT.
+	 *                         By default the supports values is set to:
 	 *                         'title', 'editor', 'thumbnail', 'excerpt'
 	 *
 	 * @param array  $options  Used to override the default parameters.
 	 */
-	public function __construct( $singular, $plural = null, $icon = 'dashicons-format-aside', $supports = array(), $options = array() ) {
+	public function __construct( $singular, $plural = null, $icon = null, $supports = array(), $options = array() ) {
 		// The CPT name (slug).
 		$name = strtolower( sanitize_title( $singular ) );
 
@@ -171,7 +171,7 @@ class PostType extends PostType\Post_Type {
 			);
 		}
 		$options['supports']  = $supports;
-		$options['menu_icon'] = $icon;
+		$options['menu_icon'] = empty( $icon ) ? 'dashicons-format-aside' : $icon;
 
 		// Let's register it.
 		$args = array(
