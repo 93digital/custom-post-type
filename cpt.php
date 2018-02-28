@@ -254,7 +254,7 @@ class PostType extends PostType\Post_Type {
 		}
 
 		$args = array_merge( $args, $custom_args );
-		$this->_last_query = new WP_Query( $args );
+		$this->_last_query = new \WP_Query( $args );
 
 		return $this->_last_query;
 	}
