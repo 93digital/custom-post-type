@@ -131,7 +131,9 @@ class PostType extends PostType\Post_Type {
 		 */
 		$is_public = ! isset( $options['public'] ) || $options['public'] != false;
 		if ( ! isset( $options['has_archive'] ) && $is_public || ( isset( $options['has-options'] ) && $options['has-options'] ) ) {
-			$options['has_archive'] = sanitize_title( $plural );
+			if ( $options['has_archive'] !== false ) {
+				$options['has_archive'] = sanitize_title( $plural );
+			}
 
 			/**
 			 * Add a option page to be used to set/retrieve information from the archive
