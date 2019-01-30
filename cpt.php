@@ -180,6 +180,10 @@ class PostType extends PostType\Post_Type {
 		$options['supports']  = $supports;
 		$options['menu_icon'] = empty( $icon ) ? 'dashicons-format-aside' : $icon;
 
+		if ( ! isset( $options['show_in_rest'] ) ) {
+			$options['show_in_rest'] = true;
+		}
+
 		// Let's register it.
 		$args = array(
 			'name'     => $name,
