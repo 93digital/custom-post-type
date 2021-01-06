@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<ruleset name="93Digital Ruleset">
+	<description>A custom set of rules to check for a 93Digital WordPress project</description>
+
+	<exclude-pattern>/docroot/wp-admin/*</exclude-pattern>
+	<exclude-pattern>/docroot/wp-includes/*</exclude-pattern>
+	<exclude-pattern>/docroot/wp-*.php</exclude-pattern>
+	<exclude-pattern>/docroot/index.php</exclude-pattern>
+	<exclude-pattern>/docroot/xmlrpc.php</exclude-pattern>
+	<exclude-pattern>/docroot/wp-content/plugins/*</exclude-pattern>
+	<exclude-pattern>*.twig</exclude-pattern>
+	<exclude-pattern>*/phpunit.xml*</exclude-pattern>
+	<exclude-pattern>*/languages/*</exclude-pattern>
+	<exclude-pattern>*/tests/*</exclude-pattern>
+
+	<!-- Third-party code -->
+	<exclude-pattern>*/bower-components/*</exclude-pattern>
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<exclude-pattern>*/gulp-tasks/*</exclude-pattern>
+	<exclude-pattern>*/assets/*</exclude-pattern>
+
+	<!-- Don't worry about files that don't contain any code -->
+	<rule ref="Internal.NoCodeFound">
+		<severity>0</severity>
+	</rule>
+
+	<!-- Internal exceptions (often occur on minified files) -->
+	<rule ref="Internal.Tokenizer.Exception">
+		<severity>0</severity>
+	</rule>
+
+	<rule ref="Squiz.PHP.CommentedOutCode"/>
+	<rule ref="Squiz.WhiteSpace.SuperfluousWhitespace"/>
+
+	<rule ref="WordPress">
+
+		<!-- Multi-line function call not indented correctly; expected X spaces but found Y -->
+		<exclude name="PEAR.Functions.FunctionCallSignature.Indent" />
+
+		<!-- Yoda conditions, people often forget. -->
+		<exclude name="WordPress.PHP.YodaConditions.NotYoda" />
+
+		<!-- An empty "else" isn't a security concern. -->
+		<exclude name="Generic.CodeAnalysis.EmptyStatement.DetectedELSE" />
+
+		<!-- Don't be so strict about strict comparisons -->
+		<exclude name="WordPress.PHP.StrictComparisons.LooseComparison" />
+
+	</rule>
+
+</ruleset>

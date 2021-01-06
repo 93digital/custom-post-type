@@ -1,0 +1,21 @@
+{
+    "name": "93devs/custom-post-type",
+    "description": "Custom Post type utility functions by 93digital",
+    "homepage": "https://bitbucket.org/vicLobins93/custom-post-type/",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "93digital",
+            "email": "info@93digital.co.uk",
+            "homepage": "https://93digital.co.uk/"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "classmap": ["cpt.php"],
+        "exclude-from-classmap": ["phpcs.xml"]
+    }
+}
