@@ -137,6 +137,10 @@ class PostType extends PostType\Post_Type {
 				$options['has_archive'] = sanitize_title( $plural );
 			}
 
+			if ( is_string( $has_archive ) ) {
+				$options['has_archive'] = $has_archive;
+			}
+
 			/**
 			 * Add a option page to be used to set/retrieve information from the archive
 			 * page.
