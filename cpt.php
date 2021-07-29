@@ -131,23 +131,16 @@ class PostType extends PostType\Post_Type {
 		 */
 		$is_public = ! isset( $options['public'] ) || $options['public'] != false;
 		if ( ! isset( $options['has_archive'] ) && $is_public || ( isset( $options['has-options'] ) && $options['has-options'] ) ) {
-<<<<<<< HEAD
 			$has_archive = isset( $options['has_archive'] ) ? $options['has_archive'] : false;
-=======
-			$has_archive = isset( $options['has_archive'] ) ? $options['has_archive'] : true;
->>>>>>> remotes/github/master
 
 			if ( $has_archive ) {
 				$options['has_archive'] = sanitize_title( $plural );
 			}
 
-<<<<<<< HEAD
 			if ( is_string( $has_archive ) ) {
 				$options['has_archive'] = $has_archive;
 			}
 
-=======
->>>>>>> remotes/github/master
 			/**
 			 * Add a option page to be used to set/retrieve information from the archive
 			 * page.
