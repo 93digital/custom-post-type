@@ -1,7 +1,7 @@
 {
-    "name": "93devs/custom-post-type",
+    "name": "93digital/custom-post-type",
     "description": "Custom Post type utility functions by 93digital",
-    "homepage": "https://bitbucket.org/vicLobins93/custom-post-type/",
+    "homepage": "https://github.com/93digital/custom-post-type",
     "license": "MIT",
     "minimum-stability": "dev",
     "authors": [
@@ -15,7 +15,11 @@
         "php": ">=5.3.0"
     },
     "autoload": {
-        "classmap": ["cpt.php"],
-        "exclude-from-classmap": ["phpcs.xml"]
+        "classmap": [
+            "cpt.php"
+        ],
+        "exclude-from-classmap": [
+            "phpcs.xml"
+        ]
     }
 }
